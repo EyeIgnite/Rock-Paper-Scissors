@@ -24,7 +24,7 @@ function getComputerChoice() {
 function playRound(playerSelection, computerSelection) {
 
   if (playerSelection === "" || playerSelection === null) {
-    console.log("Invalid input. Please enter rock, paper, or scissors")
+    console.log("Invalid input");
   }
   else if (playerSelection === computerSelection) {
     return `Draw! Both players picked ${playerSelection}`;
