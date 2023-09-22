@@ -2,17 +2,20 @@ let playerScore = 0;
 let computerScore = 0;
 let draws = 0;
 
+let playerWinRound = "Player wins!";
+let computerWinRound = "Computer Wins!";
+
 function getComputerChoice() {
   const randomChoice = Math.floor(Math.random() * 3);
 
   if (randomChoice === 0) {
-    return 0; // rock
+    return "rock"; 
   }
   else if (randomChoice === 1) {
-    return 1; // paper
+    return "paper"; 
   }
   else {
-    return 2; // scissors
+    return "scissors"; 
   }
 }
 
@@ -21,24 +24,22 @@ function playRound(playerSelection, computerSelection) {
   if (playerSelection === computerSelection) {
     return draw;
   }
-  else if (playerSelection === 1 && computerSelection === 3) {
+  else if (playerSelection === "rock" && computerSelection === "scissors") {
     return playerWinRound + " Rock beats scissors!";
   }
-  else if (playerSelection === 2 && computerSelection === 1) {
+  else if (playerSelection === "paper" && computerSelection === "rock") {
     return playerWinRound + " Paper beats rock!";
   }
-  else if (playerSelection === 3 && computerSelection === 2) {
+  else if (playerSelection === "scissors" && computerSelection === "paper") {
     return playerWinRound + " Scissors beats paper!"; 
   }
   else {
-    return computerWinRound
+    return computerWinRound + ` ${computerSelection.charAt(0).toUpperCase() + computerSelection.slice(1)} beats ${playerSelection}!`;
   }
 }
 
-const playerSelection = prompt("Enter 0 for rock, 1 for paper or 2 for scissors").toLowerCase();
+const playerSelection = prompt("Enter Rock, Paper, or Scissors to start the game").toLowerCase();
+let draw = `Draw! Both players picked ${playerSelection}`;
 const computerSelection = getComputerChoice();
-console.log( playRound(playerSelection, computerSelection) );
 
-var playerWinRound = "Player wins!";
-var computerWinRound = "Computer Wins!";
-var draw = `Draw! Both players picked ${playerSelection}`;
+console.log( playRound(playerSelection, computerSelection) );
