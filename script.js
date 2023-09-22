@@ -24,17 +24,22 @@ function getComputerChoice() {
   }
 }
 
+// Function to play a single round
 function playRound(playerSelection, computerSelection) {
-
+// Check for invalid input
   if (playerSelection === "" || playerSelection === null) {
     console.log("Invalid input");
   }
+  // Check for a draw
   else if (playerSelection === computerSelection) {
     return `Draw! Both players picked ${playerSelection}`;
   }
-  else if (playerSelection === "rock" && computerSelection === "scissors" || 
-  playerSelection === "paper" && computerSelection === "rock" || 
-  playerSelection === "scissors" && computerSelection === "paper") {
+  // Check for player win
+  else if (
+    playerSelection === "rock" && computerSelection === "scissors" || 
+    playerSelection === "paper" && computerSelection === "rock" || 
+    playerSelection === "scissors" && computerSelection === "paper"
+  ) {
     playerScore++;
     return playerWinRound + ` ${playerSelection.charAt(0).toUpperCase() + 
     playerSelection.slice(1)} beats ${computerSelection}!`;
