@@ -26,12 +26,15 @@ function playRound(playerSelection, computerSelection) {
   else if (playerSelection === 3 && computerSelection === 2) {
     return playerWinRound + " Scissors beats paper!"; 
   }
+  else {
+    return computerWinRound
+  }
 }
-
-let playerWinRound = "Player wins!";
-let computerWinRound = "Computer Wins!";
-let draw = `Draw! Both players picked ${playerSelection}`;
 
 const playerSelection = prompt("Rock, Paper or Scissors to start the game").toLowerCase();
 const computerSelection = getComputerChoice();
 console.log( playRound(playerSelection, computerSelection) );
+
+let playerWinRound = "Player wins!";
+let computerWinRound = "Computer Wins!";
+let draw = `Draw! Both players picked ${playerSelection}`;
