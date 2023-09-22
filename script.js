@@ -1,14 +1,14 @@
 function getComputerChoice() {
-  const randomChoice = Math.random() * 3;
+  const randomChoice = Math.floor(Math.random() * 3);
 
-  if (randomChoice <= 1) {
-    return 1; // rock
+  if (randomChoice === 0) {
+    return 0; // rock
   }
-  else if (randomChoice <= 2) {
-    return 2; // paper
+  else if (randomChoice === 1) {
+    return 1; // paper
   }
   else {
-    return 3; // scissors
+    return 2; // scissors
   }
 }
 
@@ -31,10 +31,10 @@ function playRound(playerSelection, computerSelection) {
   }
 }
 
-const playerSelection = prompt("Rock, Paper or Scissors to start the game").toLowerCase();
+const playerSelection = prompt("Enter 0 for rock, 1 for paper or 2 for scissors").toLowerCase();
 const computerSelection = getComputerChoice();
 console.log( playRound(playerSelection, computerSelection) );
 
-let playerWinRound = "Player wins!";
-let computerWinRound = "Computer Wins!";
-let draw = `Draw! Both players picked ${playerSelection}`;
+var playerWinRound = "Player wins!";
+var computerWinRound = "Computer Wins!";
+var draw = `Draw! Both players picked ${playerSelection}`;
