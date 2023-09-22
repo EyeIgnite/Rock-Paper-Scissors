@@ -44,6 +44,7 @@ function playRound(playerSelection, computerSelection) {
     return playerWinRound + ` ${playerSelection.charAt(0).toUpperCase() + 
     playerSelection.slice(1)} beats ${computerSelection}!`;
   }
+  // Computer win
   else {
     computerScore++;
     return computerWinRound + ` ${computerSelection.charAt(0).toUpperCase() + 
@@ -51,8 +52,9 @@ function playRound(playerSelection, computerSelection) {
   }
 }
 
-
+// Main game function
 function game() {
+  // Loop to play 5 rounds
   for (let i = 0; i < 5; i++) {
     const playerSelection = prompt("Enter Rock, Paper, or Scissors to start the game").toLowerCase();
     const computerSelection = getComputerChoice();
@@ -61,6 +63,7 @@ function game() {
     console.log("Player score is: " + playerScore);
     console.log("Computer score is: " + computerScore);
   }
+  // Determine game winner
   if (playerScore > computerScore) {
     console.log(playerWinsGame);
   }
@@ -73,8 +76,7 @@ function game() {
   
 }
   
-
-
+// Start the game
 game();
 
 
