@@ -1,12 +1,15 @@
+// Initialize scores
 let playerScore = 0;
 let computerScore = 0;
 let draws = 0;
 
-let playerWinRound = "Player wins!";
-let computerWinRound = "Computer Wins!";
-let playerWinsGame = "Player has won the game, congrats!";
-let computerWinsGame = "Computer has won the game, congrats!";
+// Define win messages
+const playerWinRound = "Player wins!";
+const computerWinRound = "Computer Wins!";
+const playerWinsGame = "Player has won the game, congrats!";
+const computerWinsGame = "Computer has won the game, congrats!";
 
+// Function to get computer's choice
 function getComputerChoice() {
   const randomChoice = Math.floor(Math.random() * 3);
 
@@ -29,13 +32,17 @@ function playRound(playerSelection, computerSelection) {
   else if (playerSelection === computerSelection) {
     return `Draw! Both players picked ${playerSelection}`;
   }
-  else if (playerSelection === "rock" && computerSelection === "scissors" || playerSelection === "paper" && computerSelection === "rock" || playerSelection === "scissors" && computerSelection === "paper") {
+  else if (playerSelection === "rock" && computerSelection === "scissors" || 
+  playerSelection === "paper" && computerSelection === "rock" || 
+  playerSelection === "scissors" && computerSelection === "paper") {
     playerScore++;
-    return playerWinRound + ` ${playerSelection.charAt(0).toUpperCase() + playerSelection.slice(1)} beats ${computerSelection}!`;
+    return playerWinRound + ` ${playerSelection.charAt(0).toUpperCase() + 
+    playerSelection.slice(1)} beats ${computerSelection}!`;
   }
   else {
     computerScore++;
-    return computerWinRound + ` ${computerSelection.charAt(0).toUpperCase() + computerSelection.slice(1)} beats ${playerSelection}!`;
+    return computerWinRound + ` ${computerSelection.charAt(0).toUpperCase() + 
+    computerSelection.slice(1)} beats ${playerSelection}!`;
   }
 }
 
@@ -64,3 +71,6 @@ function game() {
 
 
 game();
+
+
+// let func = (arg1, arg2, ..., argN) => expression; 
