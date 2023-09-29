@@ -20,6 +20,21 @@ function getComputerChoice() {
   }
 }
 
+function getPlayerChoice() {
+  let playerInput;
+
+  while (true) {
+    const userInput = prompt("Enter (rock, paper, or scissors to start the game):");
+
+    if (playerInput === "rock" || playerInput === "paper" || playerInput === "scissors") {
+      return playerInput;
+    }
+    else {
+      console.log("Invalid input, please enter a valid choice!");
+    }
+  }
+}
+
 function playRound(playerSelection, computerSelection) {
   if (playerSelection === "" || playerSelection === null) {
     console.log("Invalid input");
