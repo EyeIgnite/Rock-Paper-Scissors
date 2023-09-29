@@ -38,7 +38,7 @@ function getPlayerChoice() {
     playerInput === "paper" || 
     playerInput === "scissors"
     ) {
-      return playerInput.toLowerCase().trim();;
+      return playerInput;
     }   
     else {
       console.log("Invalid input, please enter a valid choice!");
