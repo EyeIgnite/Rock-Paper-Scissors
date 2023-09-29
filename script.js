@@ -24,7 +24,8 @@ function getPlayerChoice() {
   let playerInput;
 
   while (true) {
-    const userInput = prompt("Enter (rock, paper, or scissors to start the game):");
+    const userInput = prompt("Enter rock, paper, or scissors to start the game");
+    playerInput = userInput;
 
     if (playerInput === "rock" || playerInput === "paper" || playerInput === "scissors") {
       return playerInput;
@@ -32,14 +33,15 @@ function getPlayerChoice() {
     else {
       console.log("Invalid input, please enter a valid choice!");
     }
+
+    if (playerInput === null) {
+      break;
+    }
   }
 }
 
 function playRound(playerSelection, computerSelection) {
-  if (playerSelection === "" || playerSelection === null) {
-    console.log("Invalid input");
-  }
-  else if (playerSelection === computerSelection) {
+  if (playerSelection === computerSelection) {
     return `Draw! Both players picked ${playerSelection}`;
   }
   else if (
@@ -60,9 +62,9 @@ function playRound(playerSelection, computerSelection) {
 
 function game() {
   for (let i = 0; i < 5; i++) {
-    const playerSelection = prompt("Enter rock, paper, or scissors to start the game");
+    const playerSelection = getPlayerChoice();
     if (playerSelection !== null) {
-      playerSelection.toLowerCase();
+      playerSelection.toLowerCase().trim();
     }
     const computerSelection = getComputerChoice();
     const result = playRound(playerSelection, computerSelection);
