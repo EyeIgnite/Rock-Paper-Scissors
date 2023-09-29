@@ -1,6 +1,5 @@
 let playerScore = 0;
 let computerScore = 0;
-let draws = 0;
 
 const playerWinRound = "Player wins!";
 const computerWinRound = "Computer Wins!";
@@ -46,7 +45,10 @@ function playRound(playerSelection, computerSelection) {
 
 function game() {
   for (let i = 0; i < 5; i++) {
-    const playerSelection = prompt("Enter Rock, Paper, or Scissors to start the game").toLowerCase();
+    const playerSelection = prompt("Enter Rock, Paper, or Scissors to start the game");
+    if (playerSelection !== null) {
+      playerSelection.toLowerCase();
+    }
     const computerSelection = getComputerChoice();
     const result = playRound(playerSelection, computerSelection);
     console.log(result); 
