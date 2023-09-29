@@ -64,7 +64,7 @@ function playRound(playerSelection, computerSelection) {
 }
 
 function game() {
-  for (let i = 0; i <= 10; i++) {
+  for (let i = 0; i < 10; i++) {
     const playerSelection = getPlayerChoice();
     if (playerSelection !== null) {
       playerSelection.toLowerCase().trim();
