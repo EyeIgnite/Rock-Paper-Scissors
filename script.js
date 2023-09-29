@@ -26,18 +26,19 @@ function getPlayerChoice() {
 
   while (true) {
     const userInput = prompt("Enter rock, paper, or scissors to start the game");
-    playerInput = userInput;
     
-    if (playerInput === null) {
+    if (userInput === null) {
       console.log("Game canceled by user.");
       return null;
     }
+    playerInput = userInput.toLowerCase().trim();
+
     if (
     playerInput === "rock" || 
     playerInput === "paper" || 
     playerInput === "scissors"
     ) {
-      return playerInput.toLowerCase().trim();
+      return playerInput.toLowerCase().trim();;
     }   
     else {
       console.log("Invalid input, please enter a valid choice!");
@@ -90,5 +91,27 @@ function game() {
     }
   }
 }
-  
+
+function playAgain() {
+  const input = prompt("Do you want to play again? (yes or no)");
+  playerScore = 0;
+  computerScore = 0;
+
+  if (input === null) {
+    return null;
+  }
+
+  if (input && input.toLowerCase().trim() === "yes") {
+    game();
+    playAgain();
+  } else if (input && input.toLowerCase().trim() === "no") {
+    console.log("Thanks for playing!");
+  }
+  else {
+    console.log("Invalid input. Please type yes or no.");
+    return playAgain();
+  }
+}
+
 game();
+playAgain();
