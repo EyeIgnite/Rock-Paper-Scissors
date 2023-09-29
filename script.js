@@ -6,6 +6,7 @@ const computerWinRound = "Computer Wins!";
 const playerWinsGame = "Player has won the game, congrats!";
 const computerWinsGame = "Computer has won the game, congrats!";
 
+
 function getComputerChoice() {
   const randomChoice = Math.floor(Math.random() * 3);
 
@@ -37,8 +38,7 @@ function getPlayerChoice() {
     playerInput === "scissors"
     ) {
       return playerInput.toLowerCase().trim();
-    }
-    
+    }   
     else {
       console.log("Invalid input, please enter a valid choice!");
       return getPlayerChoice();
@@ -67,30 +67,28 @@ function playRound(playerSelection, computerSelection) {
 }
 
 function game() {
-  for (let i = 0; i < 10; i++) {
+  for (let i = 0; i < 100; i++) {
     const playerSelection = getPlayerChoice();
 
     if (playerSelection === null) {
       break;
     }
-    
+
     const computerSelection = getComputerChoice();
     const result = playRound(playerSelection, computerSelection);
     console.log(result); 
     console.log("Player score is: " + playerScore);
     console.log("Computer score is: " + computerScore); 
+    
+    if (playerScore === 5 ) {
+      console.log(playerWinsGame);
+      break;
+    }
+    else if (computerScore === 5 ) {
+      console.log(computerWinsGame);
+      break;
+    }
   }
-
-  if (playerScore === 5 || playerScore > computerScore) {
-    console.log(playerWinsGame);
-  }
-  else if (computerScore === 5 || computerScore > playerScore) {
-    console.log(computerWinsGame);
-  }
-  else {
-    console.log("The game ended in a draw!");
-  }
-  
 }
   
 game();
