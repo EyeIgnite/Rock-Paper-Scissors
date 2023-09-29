@@ -45,7 +45,7 @@ function playRound(playerSelection, computerSelection) {
 
 function game() {
   for (let i = 0; i < 5; i++) {
-    const playerSelection = prompt("Enter Rock, Paper, or Scissors to start the game");
+    const playerSelection = prompt("Enter rock, paper, or scissors to start the game");
     if (playerSelection !== null) {
       playerSelection.toLowerCase();
     }
