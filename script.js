@@ -27,15 +27,18 @@ function getPlayerChoice() {
     const userInput = prompt("Enter rock, paper, or scissors to start the game");
     playerInput = userInput;
 
-    if (playerInput === "rock" || playerInput === "paper" || playerInput === "scissors") {
+    if (
+    playerInput === "rock" || 
+    playerInput === "paper" || 
+    playerInput === "scissors"
+    ) {
       return playerInput;
+    }
+    if (playerInput === null) {
+      break;
     }
     else {
       console.log("Invalid input, please enter a valid choice!");
-    }
-
-    if (playerInput === null) {
-      break;
     }
   }
 }
@@ -61,7 +64,7 @@ function playRound(playerSelection, computerSelection) {
 }
 
 function game() {
-  for (let i = 0; i < 5; i++) {
+  for (let i = 0; i <= 10; i++) {
     const playerSelection = getPlayerChoice();
     if (playerSelection !== null) {
       playerSelection.toLowerCase().trim();
@@ -72,10 +75,10 @@ function game() {
     console.log("Player score is: " + playerScore);
     console.log("Computer score is: " + computerScore);
   }
-  if (playerScore > computerScore) {
+  if (playerScore > computerScore || playerScore === 5) {
     console.log(playerWinsGame);
   }
-  else if (computerScore > playerScore) {
+  else if (computerScore > playerScore || computerScore === 5) {
     console.log(computerWinsGame);
   }
   else {
