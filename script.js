@@ -67,6 +67,14 @@ function playRound(playerSelection, computerSelection) {
   }
 }
 
+const buttons = document.querySelectorAll('button');
+buttons.forEach((button) => {
+  button.addEventListener('click', () => {
+    getPlayerChoice();
+    game();
+  });
+});
+
 function game() {
   for (let i = 0; i < 100; i++) {
     const playerSelection = getPlayerChoice();
