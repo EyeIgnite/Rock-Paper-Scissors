@@ -21,8 +21,10 @@ btns.forEach(button => button.addEventListener("click", (e) => {
   const playerSelection = e.target.textContent.toLowerCase();
   const computerSelection = getComputerChoice();
   const result = playRound(playerSelection, computerSelection);
-  playerChoice.textContent = `Player choice: ${playerSelection}`;
-  computerChoice.textContent = `Computer choice: ${computerSelection}`;
+  playerChoice.textContent = `Player choice: ${playerSelection.charAt(0).toUpperCase() + 
+  playerSelection.slice(1)}`;
+  computerChoice.textContent = `Computer choice: ${computerSelection.charAt(0).toUpperCase() + 
+  computerSelection.slice(1)}`;
   text.forEach(text => text.style.cssText = "font-size: 20px; font-weight: 500;");
   roundResult.textContent = result;
   userScore.textContent = "Player's score is: " + playerScore;
