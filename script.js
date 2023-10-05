@@ -1,3 +1,4 @@
+document.addEventListener("DOMContentLoaded", function() {
 let playerScore = 0;
 let computerScore = 0;
 
@@ -11,6 +12,7 @@ const btns = document.querySelectorAll("button");
 
 const playerChoice = document.querySelector("#player-choice");
 const computerChoice = document.querySelector("#computer-choice")
+const text = document.querySelectorAll(".text");
 const roundResult = document.querySelector("#round-result");
 const userScore = document.querySelector("#player-score");
 const cpuScore = document.querySelector("#computer-score")
@@ -21,6 +23,7 @@ btns.forEach(button => button.addEventListener("click", (e) => {
   const result = playRound(playerSelection, computerSelection);
   playerChoice.textContent = `Player choice: ${playerSelection}`;
   computerChoice.textContent = `Computer choice: ${computerSelection}`;
+  text.style.cssText = "font-size: 24px; font-weight: 500;";
   roundResult.textContent = result;
   userScore.textContent = "Player's score is: " + playerScore;
   cpuScore.textContent = "Computer's score is: " + computerScore;
@@ -50,7 +53,7 @@ function playRound(playerSelection, computerSelection) {
     computerSelection.slice(1)} beats ${playerSelection}!`;
   }
 }
-
+});
 
 // function game() {
 //   for (let i = 0; i < 100; i++) {
