@@ -9,7 +9,8 @@ const computerWinsGame = "Computer has won the game, congrats!";
 const choices = ["rock", "paper", "scissors"];
 const btns = document.querySelectorAll("button");
 
-const rpsChoices = document.querySelector("#rps-choices");
+const playerChoice = document.querySelector("#player-choice");
+const computerChoice = document.querySelector("#computer-choice")
 const roundResult = document.querySelector("#round-result");
 const userScore = document.querySelector("#player-score");
 const cpuScore = document.querySelector("#computer-score")
@@ -18,7 +19,8 @@ btns.forEach(button => button.addEventListener("click", (e) => {
   const playerSelection = e.target.textContent.toLowerCase();
   const computerSelection = getComputerChoice();
   const result = playRound(playerSelection, computerSelection);
-  
+  playerChoice.textContent = `Player choice: ${playerSelection}`;
+  computerChoice.textContent = `Computer choice: ${computerSelection}`;
   roundResult.textContent = result;
   userScore.textContent = "Player's score is: " + playerScore;
   cpuScore.textContent = "Computer's score is: " + computerScore;
