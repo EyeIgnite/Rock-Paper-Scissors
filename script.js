@@ -6,46 +6,59 @@ const computerWinRound = "Computer Wins!";
 const playerWinsGame = "Player has won the game, congrats!";
 const computerWinsGame = "Computer has won the game, congrats!";
 
+const rps = ["rock", "paper", "scissors"];
+const btns = document.querySelectorAll("button");
+
+btns.forEach(button => button.addEventListener("click", (e) => {
+  const playerChoice = e.target.textContent;
+}))
 
 function getComputerChoice() {
-  const randomChoice = Math.floor(Math.random() * 3);
-
-  if (randomChoice === 0) {
-    return "rock"; 
-  }
-  else if (randomChoice === 1) {
-    return "paper"; 
-  }
-  else {
-    return "scissors"; 
-  }
+  let randomChoice = rps[Math.floor(Math.random() * rps.length)];
+  return randomChoice;
 }
 
-function getPlayerChoice() {
-  let playerInput;
+console.log(getComputerChoice());
 
-  while (true) {
-    const userInput = prompt("Enter rock, paper, or scissors to start the game");
+// function getComputerChoice() {
+//   const randomChoice = Math.floor(Math.random() * 3);
+
+//   if (randomChoice === 0) {
+//     return "rock"; 
+//   }
+//   else if (randomChoice === 1) {
+//     return "paper"; 
+//   }
+//   else {
+//     return "scissors"; 
+//   }
+// }
+
+// function getPlayerChoice() {
+//   let playerInput;
+
+//   while (true) {
+//     const userInput = prompt("Enter rock, paper, or scissors to start the game");
     
-    if (userInput === null) {
-      console.log("Game canceled by user.");
-      return null;
-    }
-    playerInput = userInput.toLowerCase().trim();
+//     if (userInput === null) {
+//       console.log("Game canceled by user.");
+//       return null;
+//     }
+//     playerInput = userInput.toLowerCase().trim();
 
-    if (
-    playerInput === "rock" || 
-    playerInput === "paper" || 
-    playerInput === "scissors"
-    ) {
-      return playerInput;
-    }   
-    else {
-      console.log("Invalid input, please enter a valid choice!");
-      return getPlayerChoice();
-    }
-  }
-}
+//     if (
+//     playerInput === "rock" || 
+//     playerInput === "paper" || 
+//     playerInput === "scissors"
+//     ) {
+//       return playerInput;
+//     }   
+//     else {
+//       console.log("Invalid input, please enter a valid choice!");
+//       return getPlayerChoice();
+//     }
+//   }
+// }
 
 function playRound(playerSelection, computerSelection) {
   if (playerSelection === computerSelection) {
@@ -67,59 +80,51 @@ function playRound(playerSelection, computerSelection) {
   }
 }
 
-const buttons = document.querySelectorAll('button');
-buttons.forEach((button) => {
-  button.addEventListener('click', () => {
-    getPlayerChoice();
-    game();
-  });
-});
 
-function game() {
-  for (let i = 0; i < 100; i++) {
-    const playerSelection = getPlayerChoice();
+// function game() {
+//   for (let i = 0; i < 100; i++) {
+//     const playerSelection = "";
 
-    if (playerSelection === null) {
-      break;
-    }
+//     if (playerSelection === null) {
+//       break;
+//     }
 
-    const computerSelection = getComputerChoice();
-    const result = playRound(playerSelection, computerSelection);
-    console.log(result); 
-    console.log("Player score is: " + playerScore);
-    console.log("Computer score is: " + computerScore); 
+//     const computerSelection = getComputerChoice();
+//     const result = playRound(playerSelection, computerSelection);
+//     console.log(result); 
+//     console.log("Player score is: " + playerScore);
+//     console.log("Computer score is: " + computerScore); 
     
-    if (playerScore === 5 ) {
-      console.log(playerWinsGame);
-      break;
-    }
-    else if (computerScore === 5 ) {
-      console.log(computerWinsGame);
-      break;
-    }
-  }
-}
+//     if (playerScore === 5 ) {
+//       console.log(playerWinsGame);
+//       break;
+//     }
+//     else if (computerScore === 5 ) {
+//       console.log(computerWinsGame);
+//       break;
+//     }
+//   }
+// }
 
-function playAgain() {
-  const input = prompt("Do you want to play again? (yes or no)");
-  playerScore = 0;
-  computerScore = 0;
+// function playAgain() {
+//   const input = prompt("Do you want to play again? (yes or no)");
+//   playerScore = 0;
+//   computerScore = 0;
 
-  if (input === null) {
-    return null;
-  }
+//   if (input === null) {
+//     return null;
+//   }
 
-  if (input && input.toLowerCase().trim() === "yes") {
-    game();
-    playAgain();
-  } else if (input && input.toLowerCase().trim() === "no") {
-    console.log("Thanks for playing!");
-  }
-  else {
-    console.log("Invalid input. Please type yes or no.");
-    return playAgain();
-  }
-}
+//   if (input && input.toLowerCase().trim() === "yes") {
+//     game();
+//     playAgain();
+//   } else if (input && input.toLowerCase().trim() === "no") {
+//     console.log("Thanks for playing!");
+//   }
+//   else {
+//     console.log("Invalid input. Please type yes or no.");
+//     return playAgain();
+//   }
+// }
 
-game();
-playAgain();
+// playAgain();
