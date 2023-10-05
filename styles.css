@@ -58,7 +58,7 @@ button:hover {
 .buttons {
   display: flex;
   gap: 25px;
-  margin: 150px 0 30px;
+  margin: 125px 0 30px;
 }
 
 .rock,
