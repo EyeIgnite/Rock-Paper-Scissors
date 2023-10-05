@@ -50,7 +50,7 @@ function checkWinner() {
 
 function playRound(playerSelection, computerSelection) {
   if (playerSelection === computerSelection) {
-    return `Draw! Both players picked ${playerSelection}`;
+    return `Draw! Both players picked ${playerSelection}!`;
   }
   else if (
     playerSelection === "rock" && computerSelection === "scissors" || 
