@@ -37,14 +37,12 @@ function getComputerChoice() {
 }
 
 function checkWinner() {
-  if (playerScore > computerScore && playerScore === 5) {
+  if (playerScore === 5) {
     return winner.textContent = "Player has won the game, congrats!";
   }
-  else if (computerScore > playerScore && computerScore === 5) {
+  else if (computerScore === 5) {
     return winner.textContent = "Computer has won the game, congrats!";
   }
-
-  console.log(winner);
 }
 
 
