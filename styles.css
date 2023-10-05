@@ -19,3 +19,11 @@ body {
   border: 2px solid red;
 }
 
+.choices {
+  display: flex;
+  gap: 30px;
+}
+
+#choice-item {
+  text-align: center;
+}

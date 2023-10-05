@@ -7,7 +7,7 @@ const computerWinRound = "Computer Wins!";
 const choices = ["rock", "paper", "scissors"];
 const btns = document.querySelectorAll("button");
 
-const playerChoice = document.querySelector("#player-choice");
+const playerChoice = document.querySelector("#choice-item");
 const computerChoice = document.querySelector("#computer-choice")
 const text = document.querySelectorAll(".text");
 const roundResult = document.querySelector("#round-result");
@@ -22,9 +22,9 @@ btns.forEach(button => button.addEventListener("click", (e) => {
   const playerSelection = e.target.textContent.toLowerCase();
   const computerSelection = getComputerChoice();
   const result = playRound(playerSelection, computerSelection);
-  playerChoice.textContent = `Player choice: ${playerSelection.charAt(0).toUpperCase() + 
+  playerChoice.textContent = `${playerSelection.charAt(0).toUpperCase() + 
   playerSelection.slice(1)}`;
-  computerChoice.textContent = `Computer choice: ${computerSelection.charAt(0).toUpperCase() + 
+  computerChoice.textContent = `${computerSelection.charAt(0).toUpperCase() + 
   computerSelection.slice(1)}`;
   roundResult.textContent = result;
   userScore.textContent = "Player's score is: " + playerScore;
