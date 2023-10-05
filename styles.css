@@ -13,7 +13,7 @@ body {
 
 @font-face {
   font-family: "custom-font";
-  src: url("/fonts/CroissantOne-Regular.ttf")
+  src: url("/fonts/CroissantOne-Regular.ttf");
 }
 
 @font-face {
