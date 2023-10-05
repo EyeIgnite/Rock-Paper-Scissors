@@ -57,6 +57,15 @@ function playRound(playerSelection, computerSelection) {
 }
 });
 
+function checkWinner() {
+  if (playerScore > computerScore && playerScore === 5) {
+    return playerWinsGame;
+  }
+  else if (computerScore > playerScore && computerScore === 5) {
+    return computerWinsGame;
+  }
+}
+
 // function game() {
 //   for (let i = 0; i < 100; i++) {
 //     const playerSelection = "";
