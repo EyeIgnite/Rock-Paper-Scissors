@@ -4,8 +4,6 @@ let computerScore = 0;
 
 const playerWinRound = "Player wins!";
 const computerWinRound = "Computer Wins!";
-const playerWinsGame = "Player has won the game, congrats!";
-const computerWinsGame = "Computer has won the game, congrats!";
 
 const choices = ["rock", "paper", "scissors"];
 const btns = document.querySelectorAll("button");
@@ -15,7 +13,8 @@ const computerChoice = document.querySelector("#computer-choice")
 const text = document.querySelectorAll(".text");
 const roundResult = document.querySelector("#round-result");
 const userScore = document.querySelector("#player-score");
-const cpuScore = document.querySelector("#computer-score")
+const cpuScore = document.querySelector("#computer-score");
+const winner = document.querySelector("#game-winner");
 
 btns.forEach(button => button.addEventListener("click", (e) => {
   const playerSelection = e.target.textContent.toLowerCase();
@@ -29,12 +28,25 @@ btns.forEach(button => button.addEventListener("click", (e) => {
   roundResult.textContent = result;
   userScore.textContent = "Player's score is: " + playerScore;
   cpuScore.textContent = "Computer's score is: " + computerScore;
+  checkWinner();
 }));
 
 function getComputerChoice() {
   let randomChoice = choices[Math.floor(Math.random() * choices.length)];
   return randomChoice;
 }
+
+function checkWinner() {
+  if (playerScore > computerScore && playerScore === 5) {
+    return winner.textContent = "Player has won the game, congrats!";
+  }
+  else if (computerScore > playerScore && computerScore === 5) {
+    return winner.textContent = "Computer has won the game, congrats!";
+  }
+
+  console.log(winner);
+}
+
 
 function playRound(playerSelection, computerSelection) {
   if (playerSelection === computerSelection) {
@@ -57,14 +69,6 @@ function playRound(playerSelection, computerSelection) {
 }
 });
 
-function checkWinner() {
-  if (playerScore > computerScore && playerScore === 5) {
-    return playerWinsGame;
-  }
-  else if (computerScore > playerScore && computerScore === 5) {
-    return computerWinsGame;
-  }
-}
 
 // function game() {
 //   for (let i = 0; i < 100; i++) {
