@@ -22,5 +22,10 @@ body {
 .choices {
   display: flex;
   gap: 30px;
+  text-align: center;
 }
+
+/* .choices #player-choice {
+  text-align: center;
+} */
 
