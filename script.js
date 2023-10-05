@@ -23,7 +23,7 @@ btns.forEach(button => button.addEventListener("click", (e) => {
   const result = playRound(playerSelection, computerSelection);
   playerChoice.textContent = `Player choice: ${playerSelection}`;
   computerChoice.textContent = `Computer choice: ${computerSelection}`;
-  text.style.cssText = "font-size: 24px; font-weight: 500;";
+  text.forEach(text => text.style.cssText = "font-size: 20px; font-weight: 500;");
   roundResult.textContent = result;
   userScore.textContent = "Player's score is: " + playerScore;
   cpuScore.textContent = "Computer's score is: " + computerScore;
