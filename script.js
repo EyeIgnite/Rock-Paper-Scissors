@@ -9,57 +9,18 @@ const computerWinsGame = "Computer has won the game, congrats!";
 const choices = ["rock", "paper", "scissors"];
 const btns = document.querySelectorAll("button");
 
+const roundResult = document.querySelector("#round-result");
+
 btns.forEach(button => button.addEventListener("click", (e) => {
   const playerSelection = e.target.textContent.toLowerCase();
   const computerSelection = getComputerChoice();
-
-  console.log(playRound(playerSelection, computerSelection));
+  const result = playRound(playerSelection, computerSelection);
 }))
 
 function getComputerChoice() {
   let randomChoice = choices[Math.floor(Math.random() * choices.length)];
   return randomChoice;
 }
-
-// function getComputerChoice() {
-//   const randomChoice = Math.floor(Math.random() * 3);
-
-//   if (randomChoice === 0) {
-//     return "rock"; 
-//   }
-//   else if (randomChoice === 1) {
-//     return "paper"; 
-//   }
-//   else {
-//     return "scissors"; 
-//   }
-// }
-
-// function getPlayerChoice() {
-//   let playerInput;
-
-//   while (true) {
-//     const userInput = prompt("Enter rock, paper, or scissors to start the game");
-    
-//     if (userInput === null) {
-//       console.log("Game canceled by user.");
-//       return null;
-//     }
-//     playerInput = userInput.toLowerCase().trim();
-
-//     if (
-//     playerInput === "rock" || 
-//     playerInput === "paper" || 
-//     playerInput === "scissors"
-//     ) {
-//       return playerInput;
-//     }   
-//     else {
-//       console.log("Invalid input, please enter a valid choice!");
-//       return getPlayerChoice();
-//     }
-//   }
-// }
 
 function playRound(playerSelection, computerSelection) {
   if (playerSelection === computerSelection) {
