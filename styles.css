@@ -6,7 +6,7 @@
 
 body {
   height: 100vh;
-  background-color: #89ABE3;
+  background-color: #AA96DA;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -20,7 +20,7 @@ body {
   min-width: 800px;
   padding: 100px;
   border: 2px solid black;
-  background-color: #EA738D;
+  background-color: #FFFFD2;
   box-shadow: 5px 5px 20px black;
 }
 
