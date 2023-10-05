@@ -10,8 +10,8 @@ const btns = document.querySelectorAll("button");
 const playerChoice = document.querySelector("#choice-item1");
 const computerChoice = document.querySelector("#choice-item2")
 const roundResult = document.querySelector("#round-result");
-const userScore = document.querySelector("#player-score");
-const cpuScore = document.querySelector("#computer-score");
+const userScore = document.querySelector("#user-score");
+const cpuScore = document.querySelector("#cpu-score");
 const winner = document.querySelector("#game-winner");
 
 btns.forEach(button => button.addEventListener("click", (e) => {
@@ -26,8 +26,8 @@ btns.forEach(button => button.addEventListener("click", (e) => {
   computerChoice.textContent = `${computerSelection.charAt(0).toUpperCase() + 
   computerSelection.slice(1)}`;
   roundResult.textContent = result;
-  userScore.textContent = "Player's score is: " + playerScore;
-  cpuScore.textContent = "Computer's score is: " + computerScore;
+  userScore.textContent = playerScore;
+  cpuScore.textContent = computerScore;
   checkWinner();
 }));
 
