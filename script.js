@@ -6,19 +6,20 @@ const computerWinRound = "Computer Wins!";
 const playerWinsGame = "Player has won the game, congrats!";
 const computerWinsGame = "Computer has won the game, congrats!";
 
-const rps = ["rock", "paper", "scissors"];
+const choices = ["rock", "paper", "scissors"];
 const btns = document.querySelectorAll("button");
 
 btns.forEach(button => button.addEventListener("click", (e) => {
-  const playerChoice = e.target.textContent;
+  const playerSelection = e.target.textContent.toLowerCase();
+  const computerSelection = getComputerChoice();
+
+  console.log(playRound(playerSelection, computerSelection));
 }))
 
 function getComputerChoice() {
-  let randomChoice = rps[Math.floor(Math.random() * rps.length)];
+  let randomChoice = choices[Math.floor(Math.random() * choices.length)];
   return randomChoice;
 }
-
-console.log(getComputerChoice());
 
 // function getComputerChoice() {
 //   const randomChoice = Math.floor(Math.random() * 3);
