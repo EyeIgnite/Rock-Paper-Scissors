@@ -1,8 +1,8 @@
 let playerScore = 0;
 let computerScore = 0;
 
-const playerWinRound = "Player wins!";
-const computerWinRound = "Computer Wins!";
+const playerWinRound = "Player wins this round!";
+const computerWinRound = "Computer wins this round!";
 
 const choices = ["rock", "paper", "scissors"];
 const btns = document.querySelectorAll("button");

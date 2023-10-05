@@ -70,6 +70,7 @@ button:hover {
   width: 150px;
   font-size: 14px;
   font-family: custom-font2;
+  color: #201E20;
 }
 
 h3 {
@@ -87,16 +88,26 @@ h3 {
 
 #round-result {
   font-family: custom-font2;
-  font-size: 27px;
+  font-size: 23px;
   color: #201E20;
   margin-bottom: 20px;
 }
 
 .scores {
-  border: 1px solid #201E20;
-  padding: 20px 90px;
+  border: 2px solid #201E20;
+  border-radius: .4rem;
+  padding: 20px 88px;
   display: flex;
   gap: 80px;
   font-family: custom-font2;
-  font-size: 17px;
+  font-size: 18px;
+  text-align: center;
+  background-color: #DDC3A5;
+}
+
+#game-winner {
+  font-family: custom-font2;
+  font-size: 30px;
+  margin-top: 20px;
+  text-decoration: underline;
 }
