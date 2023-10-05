@@ -10,12 +10,16 @@ const choices = ["rock", "paper", "scissors"];
 const btns = document.querySelectorAll("button");
 
 const roundResult = document.querySelector("#round-result");
+const userScore = document.querySelector("#player-score");
+const cpuScore = document.querySelector("#computer-score")
 
 btns.forEach(button => button.addEventListener("click", (e) => {
   const playerSelection = e.target.textContent.toLowerCase();
   const computerSelection = getComputerChoice();
   const result = playRound(playerSelection, computerSelection);
-}))
+  roundResult.textContent = result;
+  userScore.textContent = "Player's score is: ";
+}));
 
 function getComputerChoice() {
   let randomChoice = choices[Math.floor(Math.random() * choices.length)];
