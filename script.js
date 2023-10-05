@@ -1,4 +1,3 @@
-document.addEventListener("DOMContentLoaded", function() {
 let playerScore = 0;
 let computerScore = 0;
 
@@ -17,6 +16,9 @@ const cpuScore = document.querySelector("#computer-score");
 const winner = document.querySelector("#game-winner");
 
 btns.forEach(button => button.addEventListener("click", (e) => {
+  if (winner.textContent !== "") {
+    reset();
+  }
   const playerSelection = e.target.textContent.toLowerCase();
   const computerSelection = getComputerChoice();
   const result = playRound(playerSelection, computerSelection);
@@ -36,6 +38,7 @@ function getComputerChoice() {
   return randomChoice;
 }
 
+
 function checkWinner() {
   if (playerScore === 5) {
     return winner.textContent = "Player has won the game, congrats!";
@@ -44,6 +47,7 @@ function checkWinner() {
     return winner.textContent = "Computer has won the game, congrats!";
   }
 }
+
 
 
 function playRound(playerSelection, computerSelection) {
@@ -65,53 +69,11 @@ function playRound(playerSelection, computerSelection) {
     computerSelection.slice(1)} beats ${playerSelection}!`;
   }
 }
-});
 
-
-// function game() {
-//   for (let i = 0; i < 100; i++) {
-//     const playerSelection = "";
-
-//     if (playerSelection === null) {
-//       break;
-//     }
-
-//     const computerSelection = getComputerChoice();
-//     const result = playRound(playerSelection, computerSelection);
-//     console.log(result); 
-//     console.log("Player score is: " + playerScore);
-//     console.log("Computer score is: " + computerScore); 
-    
-//     if (playerScore === 5 ) {
-//       console.log(playerWinsGame);
-//       break;
-//     }
-//     else if (computerScore === 5 ) {
-//       console.log(computerWinsGame);
-//       break;
-//     }
-//   }
-// }
-
-// function playAgain() {
-//   const input = prompt("Do you want to play again? (yes or no)");
-//   playerScore = 0;
-//   computerScore = 0;
-
-//   if (input === null) {
-//     return null;
-//   }
-
-//   if (input && input.toLowerCase().trim() === "yes") {
-//     game();
-//     playAgain();
-//   } else if (input && input.toLowerCase().trim() === "no") {
-//     console.log("Thanks for playing!");
-//   }
-//   else {
-//     console.log("Invalid input. Please type yes or no.");
-//     return playAgain();
-//   }
-// }
-
-// playAgain();
+function reset() {
+  playerScore = 0;
+  computerScore = 0;
+  userScore.textContent = "Player's score is: " + playerScore;
+  cpuScore.textContent = "Computer's score is: " + computerScore;
+  winner.textContent = "";
+}
