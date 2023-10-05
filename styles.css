@@ -16,7 +16,8 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  border: 2px solid red;
+  border: 2px solid black;
+  background-color: #EA738D;
 }
 
 .choices {
@@ -25,7 +26,10 @@ body {
   text-align: center;
 }
 
-/* .choices #player-choice {
-  text-align: center;
-} */
-
+.rock,
+.paper,
+.scissors {
+  border: 1px solid black;
+  border-radius: .4rem;
+  padding: 8px 35px;
+}
