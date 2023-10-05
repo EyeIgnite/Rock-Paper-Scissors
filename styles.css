@@ -47,9 +47,18 @@ body {
   text-align: center;
 }
 
+button {
+  background-color: #DDC3A5;
+}
+
+button:hover {
+  background-color: #E0A96D;
+}
+
 .buttons {
   display: flex;
   gap: 25px;
+  margin-top: 70px;
 }
 
 .rock,
@@ -59,7 +68,7 @@ body {
   border-radius: .4rem;
   padding: 15px 0;
   width: 150px;
-  font-size: 15px;
+  font-size: 14px;
   font-family: custom-font2;
 }
 
