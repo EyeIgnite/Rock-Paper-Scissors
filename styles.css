@@ -13,12 +13,12 @@ body {
 
 @font-face {
   font-family: "custom-font";
-  src: url("/fonts/CroissantOne-Regular.ttf");
+  src: url("fonts/CroissantOne-Regular.ttf");
 }
 
 @font-face {
   font-family: "custom-font2";
-  src: url("/fonts/YoungSerif-Regular.ttf");
+  src: url("fonts/YoungSerif-Regular.ttf");
 }
 
 .flex-container {
