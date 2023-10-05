@@ -9,7 +9,6 @@ const btns = document.querySelectorAll("button");
 
 const playerChoice = document.querySelector("#choice-item1");
 const computerChoice = document.querySelector("#choice-item2")
-const text = document.querySelectorAll(".text");
 const roundResult = document.querySelector("#round-result");
 const userScore = document.querySelector("#player-score");
 const cpuScore = document.querySelector("#computer-score");
